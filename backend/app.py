@@ -393,10 +393,11 @@ if __name__ == '__main__':
     print("WebSocket: ws://127.0.0.1:5000")
     print("=" * 50)
     
-    # 生产环境使用 gevent 支持 WebSocket
+    # 开发环境启动
     socketio.run(
         app,
         host='0.0.0.0',
         port=5000,
-        debug=True
+        debug=True,
+        allow_unsafe_werkzeug=True
     )
